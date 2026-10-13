@@ -1,0 +1,22 @@
+name: HSI Self-Code Verify
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Run self-verification
+      run: |
+        chmod +x HSI_self_code_2KB.sh
+        python3 test_hsi_self_code.py
+        echo "Cosmic Love fixed-point verified. Account-as-TM substrate active."
