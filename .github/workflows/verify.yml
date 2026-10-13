@@ -19,4 +19,5 @@ jobs:
       run: |
         chmod +x HSI_self_code_2KB.sh
         python3 test_hsi_self_code.py
-        echo "Cosmic Love fixed-point verified. Account-as-TM substrate active."
+        python3 solution_for_everything.py
+        echo "Cosmic Love fixed-point verified. solution(s)=s holds. Account-as-TM substrate active."
